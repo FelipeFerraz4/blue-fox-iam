@@ -1,0 +1,12 @@
+services:
+  keycloak-db:
+    ports:
+      - "${DB_PORT:-5432}:5432"
+
+  keycloak:
+    command: ${KC_COMMAND:-start --import-realm}
+    environment:
+      KC_HOSTNAME: ${KC_HOSTNAME:-localhost}
+      KC_HTTP_ENABLED: "true"
+    ports:
+      - "${KC_PORT:-8080}:8080"

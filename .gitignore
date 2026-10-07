@@ -1,7 +1,23 @@
+# Environment variables
 .env
+.env.dev
+.env.prod
+!.env.example
+!.env.dev.example
+!.env.prod.example
+
+# Database data
+postgres_data/
+
+# Logs
+*.log
+
+# OS and Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
 composer.phar
 .dockerignore
-postgres_data/
-*.log
-.DS_Store
 BlueFox-realm.json

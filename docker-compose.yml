@@ -2,52 +2,51 @@ services:
   keycloak-db:
     image: postgres:16-alpine
     container_name: bluefox-iam-db
-    restart: always
+    restart: unless-stopped
     environment:
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME:-keycloak_db}
+      POSTGRES_USER: ${DB_USER:-bluefox_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-bluefox_password}
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-bluefox_user} -d ${DB_NAME:-keycloak_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
     networks:
       - iam-network
 
   keycloak:
     image: quay.io/keycloak/keycloak:26.6.1
     container_name: bluefox-iam-server
-    # Trocado para 'start' e removido o import automático se não quiser sobrescrever sempre
-    command: ${KC_COMMAND}
+    restart: unless-stopped
     environment:
       KC_DB: postgres
-      KC_DB_URL: jdbc:postgresql://keycloak-db:5432/${DB_NAME}
-      KC_DB_USERNAME: ${DB_USER}
-      KC_DB_PASSWORD: ${DB_PASSWORD}
-      KC_HOSTNAME: ${KC_HOSTNAME} # Domínio Real
-      KC_PROXY_HEADERS: xforwarded
-      KC_HTTP_ENABLED: "true" # O Nginx fala HTTP com o container na rede interna
-      KC_BOOTSTRAP_ADMIN_USERNAME: ${KC_ADMIN_USER}
-      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_ADMIN_PASSWORD}
-      KC_METRICS_ENABLED: "true"
-      KC_HEALTH_ENABLED: "true"
-      KC_HTTP_RELATIVE_PATH: /auth
-    # Removi o mapeamento de portas 8080:8080 se você for usar APENAS via Nginx
-    # Mas se quiser testar antes, pode manter.
-    ports:
-      - "${KC_PORT_INNER}:${KC_PORT_OUTER}"
+      KC_DB_URL: jdbc:postgresql://keycloak-db:5432/${DB_NAME:-keycloak_db}
+      KC_DB_USERNAME: ${DB_USER:-bluefox_user}
+      KC_DB_PASSWORD: ${DB_PASSWORD:-bluefox_password}
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KC_ADMIN_USER:-admin}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_ADMIN_PASSWORD:-admin}
+      KC_METRICS_ENABLED: ${KC_METRICS_ENABLED:-true}
+      KC_HEALTH_ENABLED: ${KC_HEALTH_ENABLED:-true}
+      KC_HTTP_RELATIVE_PATH: ${KC_HTTP_RELATIVE_PATH:-/auth}
     volumes:
       - ./realm-config:/opt/keycloak/data/import
       - ./themes:/opt/keycloak/themes
     depends_on:
-      - keycloak-db
+      keycloak-db:
+        condition: service_healthy
     networks:
       - iam-network
-      - shared-net
+      - infra-net
 
 networks:
   iam-network:
     driver: bridge
-  shared-net:
-    name: ${DOCKER_NETWORK}
+  infra-net:
+    name: ${DOCKER_NETWORK:-infra-net}
     external: true
 
 volumes:
