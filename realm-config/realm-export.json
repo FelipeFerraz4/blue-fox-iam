@@ -2509,11 +2509,18 @@
   },
   "internationalizationEnabled": true,
   "supportedLocales": [
+    "pt-BR",
     "pt",
     "en",
-    "es"
+    "es",
+    "de",
+    "fr",
+    "it",
+    "ja",
+    "zh-CN",
+    "ko"
   ],
-  "defaultLocale": "pt",
+  "defaultLocale": "pt-BR",
   "authenticationFlows": [
     {
       "id": "9729003f-de68-4f5d-b3e2-e5631dcd6bec",
