@@ -151,15 +151,6 @@
         "clientRole": false,
         "containerId": "72be61a4-0233-4ce7-bff6-c3d5edc78ed2",
         "attributes": {}
-      },
-      {
-        "id": "9640eb36-5cf6-4737-b783-89a267295cfe",
-        "name": "ROLE_AQUARISM_EDITORS",
-        "description": "Compatibilidade com blue-fox-blog-backend",
-        "composite": false,
-        "clientRole": false,
-        "containerId": "72be61a4-0233-4ce7-bff6-c3d5edc78ed2",
-        "attributes": {}
       }
     ],
     "client": {
@@ -620,59 +611,29 @@
       "groups": []
     },
     {
-      "id": "c76a911a-128a-45c1-8419-f01e69b59620",
-      "username": "aquarismo.editor",
-      "firstName": "Editor",
-      "lastName": "Aquarismo",
-      "email": "editor@bluefoxaquarismo.space",
-      "emailVerified": true,
-      "enabled": true,
-      "totp": false,
-      "createdTimestamp": 1791418262096,
-      "disableableCredentialTypes": [],
-      "requiredActions": [],
-      "realmRoles": [
-        "default-roles-bluefox",
-        "ROLE_USER",
-        "ROLE_AQUARIUM_EDITOR",
-        "ROLE_AQUARISM_EDITORS"
-      ],
-      "clientRoles": {},
-      "credentials": [
-        {
-          "type": "password",
-          "value": "Aquarismo@2026",
-          "temporary": false
-        }
-      ],
-      "notBefore": 0,
-      "groups": []
-    },
-    {
-      "id": "e22a445b-9999-4c12-a111-d00e69b59731",
-      "username": "aquarismo.admin",
+      "id": "b11f4400-1111-4444-8888-000000000001",
+      "username": "finance.admin",
       "firstName": "Admin",
-      "lastName": "Aquarismo",
-      "email": "admin@bluefoxaquarismo.space",
+      "lastName": "Finance",
+      "email": "admin.finance@bluefoxglobalgroup.com",
       "emailVerified": true,
       "enabled": true,
       "totp": false,
-      "createdTimestamp": 1791418262096,
+      "createdTimestamp": 1791425018765,
       "disableableCredentialTypes": [],
       "requiredActions": [],
       "realmRoles": [
         "default-roles-bluefox",
         "ROLE_USER",
         "ROLE_ADMIN",
-        "ROLE_AQUARIUM_ADMIN",
-        "ROLE_AQUARIUM_EDITOR",
-        "ROLE_AQUARISM_EDITORS"
+        "ROLE_FINANCE_ADMIN",
+        "ROLE_FINANCE_USER"
       ],
       "clientRoles": {},
       "credentials": [
         {
           "type": "password",
-          "value": "Admin@Aquarismo2026",
+          "value": "Admin@Finance2026",
           "temporary": false
         }
       ],
@@ -680,7 +641,35 @@
       "groups": []
     },
     {
-      "id": "f11b2233-4455-6677-8899-aabbccddeeff",
+      "id": "b22f4400-2222-4444-8888-000000000002",
+      "username": "finance.user",
+      "firstName": "Usuário",
+      "lastName": "Finance",
+      "email": "user.finance@bluefoxglobalgroup.com",
+      "emailVerified": true,
+      "enabled": true,
+      "totp": false,
+      "createdTimestamp": 1791425018765,
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": [
+        "default-roles-bluefox",
+        "ROLE_USER",
+        "ROLE_FINANCE_USER"
+      ],
+      "clientRoles": {},
+      "credentials": [
+        {
+          "type": "password",
+          "value": "User@Finance2026",
+          "temporary": false
+        }
+      ],
+      "notBefore": 0,
+      "groups": []
+    },
+    {
+      "id": "b33f4400-3333-4444-8888-000000000003",
       "username": "felipe.ferraz",
       "firstName": "Felipe",
       "lastName": "Ferraz",
@@ -688,18 +677,17 @@
       "emailVerified": true,
       "enabled": true,
       "totp": false,
-      "createdTimestamp": 1791418262096,
+      "createdTimestamp": 1791425018765,
       "disableableCredentialTypes": [],
       "requiredActions": [],
       "realmRoles": [
         "default-roles-bluefox",
         "ROLE_USER",
         "ROLE_ADMIN",
-        "ROLE_AQUARIUM_ADMIN",
-        "ROLE_AQUARIUM_EDITOR",
-        "ROLE_AQUARISM_EDITORS",
         "ROLE_FINANCE_ADMIN",
-        "ROLE_FINANCE_USER"
+        "ROLE_FINANCE_USER",
+        "ROLE_AQUARIUM_ADMIN",
+        "ROLE_AQUARIUM_EDITOR"
       ],
       "clientRoles": {},
       "credentials": [
@@ -1329,19 +1317,17 @@
       "clientId": "blue-fox-finance-web-local",
       "name": "Blue Fox Finance Web Local",
       "description": "",
-      "rootUrl": "http://localhost:4201",
-      "adminUrl": "http://localhost:4201",
-      "baseUrl": "http://localhost:4201/*",
+      "rootUrl": "http://localhost:4200",
+      "adminUrl": "http://localhost:4200",
+      "baseUrl": "http://localhost:4200/*",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "http://localhost:4201/*",
         "http://localhost:4200/*"
       ],
       "webOrigins": [
-        "http://localhost:4201",
         "http://localhost:4200"
       ],
       "notBefore": 0,
@@ -1355,15 +1341,18 @@
       "frontchannelLogout": true,
       "protocol": "openid-connect",
       "attributes": {
+        "logout.confirmation.enabled": "false",
+        "standard.token.exchange.enabled": "false",
+        "oauth2.jwt.authorization.grant.enabled": "false",
+        "frontchannel.logout.session.required": "true",
+        "post.logout.redirect.uris": "http://localhost:4200/*",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "backchannel.logout.revoke.offline.tokens": "false",
         "realm_client": "false",
         "oidc.ciba.grant.enabled": "false",
         "backchannel.logout.session.required": "true",
-        "standard.token.exchange.enabled": "false",
-        "oauth2.jwt.authorization.grant.enabled": "false",
-        "post.logout.redirect.uris": "http://localhost:4201/*",
-        "oauth2.device.authorization.grant.enabled": "false",
+        "display.on.consent.screen": "false",
         "pkce.code.challenge.method": "S256",
-        "backchannel.logout.revoke.offline.tokens": "false",
         "dpop.bound.access.tokens": "false"
       },
       "authenticationFlowBindingOverrides": {},
@@ -2328,7 +2317,7 @@
     "strictTransportSecurity": "max-age=31536000; includeSubDomains"
   },
   "smtpServer": {},
-  "loginTheme": "keycloak.v2",
+  "loginTheme": "bluefox-theme",
   "accountTheme": "",
   "adminTheme": "",
   "emailTheme": "",
