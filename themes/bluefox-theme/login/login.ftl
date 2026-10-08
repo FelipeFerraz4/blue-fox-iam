@@ -1,10 +1,10 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout displayMessage=!messagesPerField.existsError('username','password') displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??; section>
     <#if section = "header">
-        Acesse sua Conta
+        ${msg("loginTitle")}
     <#elseif section = "form">
         <#if realm.password>
-            <form id="kc-form-login" class="bf-form" action="${url.loginAction}" method="post" onsubmit="const btn = document.getElementById('kc-login'); if(btn){ btn.disabled = true; btn.innerText = 'Autenticando...'; } return true;">
+            <form id="kc-form-login" class="bf-form" action="${url.loginAction}" method="post" onsubmit="const btn = document.getElementById('kc-login'); if(btn){ btn.disabled = true; btn.innerText = '${msg("bfAuthenticating")}'; } return true;">
                 
                 <#-- Campo de Usuário ou E-mail -->
                 <#if !usernameHidden??>
@@ -15,7 +15,7 @@
                             <#elseif !realm.registrationEmailAsUsername>
                                 ${msg("usernameOrEmail")}
                             <#else>
-                                E-mail Corporativo
+                                ${msg("bfCorporateEmail")}
                             </#if>
                         </label>
                         <div class="bf-input-wrapper">
@@ -33,7 +33,7 @@
                                    type="text" 
                                    autofocus 
                                    autocomplete="username" 
-                                   placeholder="nome@bluefoxglobalgroup.com"
+                                   placeholder="${msg('bfEmailPlaceholder')}"
                                    dir="ltr" />
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                 <#-- Campo de Senha com alternador de visibilidade -->
                 <div class="bf-form-group">
                     <div class="bf-label-row">
-                        <label for="password" class="bf-label">Palavra-passe / Senha</label>
+                        <label for="password" class="bf-label">${msg("bfPasswordLabel")}</label>
                     </div>
                     <div class="bf-input-wrapper">
                         <span class="bf-input-icon">
@@ -57,12 +57,12 @@
                                name="password" 
                                type="password" 
                                autocomplete="current-password" 
-                               placeholder="••••••••••••" />
+                               placeholder="${msg('bfPasswordPlaceholder')}" />
                         
                         <button type="button" 
                                 class="bf-password-toggle" 
                                 id="bf-pwd-toggle" 
-                                aria-label="Mostrar ou ocultar senha"
+                                aria-label="${msg('bfShowPassword')}"
                                 onclick="togglePasswordVisibility()">
                             <svg id="bf-eye-open" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -88,14 +88,14 @@
                         <label class="bf-checkbox-label">
                             <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox" <#if login.rememberMe??>checked</#if>>
                             <span class="bf-checkbox-custom"></span>
-                            <span class="bf-checkbox-text">Lembrar de mim</span>
+                            <span class="bf-checkbox-text">${msg("rememberMe")}</span>
                         </label>
                     <#else>
                         <div></div>
                     </#if>
 
                     <#if realm.resetPasswordAllowed>
-                        <a tabindex="4" class="bf-link" href="${url.loginResetCredentialsUrl}">Esqueceu a senha?</a>
+                        <a tabindex="4" class="bf-link" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a>
                     </#if>
                 </div>
 
@@ -103,7 +103,7 @@
                 <div class="bf-form-actions">
                     <input type="hidden" id="id-hidden-input" name="credentialId" <#if auth.selectedCredential?has_content>value="${auth.selectedCredential}"</#if>/>
                     <button tabindex="5" class="bf-btn-primary" name="login" id="kc-login" type="submit">
-                        <span>Entrar na Plataforma</span>
+                        <span>${msg("doLogIn")}</span>
                         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
@@ -132,15 +132,15 @@
     <#elseif section = "info" >
         <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
             <div class="bf-register-prompt">
-                <span>Não possui uma conta corporativa?</span>
-                <a tabindex="6" class="bf-link-highlight" href="${url.registrationUrl}">Solicitar acesso</a>
+                <span>${msg("bfNoAccount")}</span>
+                <a tabindex="6" class="bf-link-highlight" href="${url.registrationUrl}">${msg("doRegister")}</a>
             </div>
         </#if>
     <#elseif section = "socialProviders" >
         <#if realm.password && social?? && social.providers?has_content>
             <div class="bf-social-section">
                 <div class="bf-divider">
-                    <span>ou acesse via</span>
+                    <span>${msg("bfSocialDivider")}</span>
                 </div>
                 <div class="bf-social-grid">
                     <#list social.providers as p>
