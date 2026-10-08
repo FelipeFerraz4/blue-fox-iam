@@ -51,10 +51,14 @@ docker compose -f docker-compose.yml -f docker-compose.prod.yml --env-file .env.
 ---
 
 ## ⚙️ Configuração Inicial Recomendada
-- **Realm:** `BlueFox`
+- **Realm:** `blue-fox-global-group`
 - **Clients:**
-  - `aquarismo-web`: (Public - Next.js/Angular)
-  - `aquarismo-api`: (Confidential - NestJS/Spring Boot)
+  - `blue-fox-aquariums-web` / `blue-fox-aquariums-web-local`: (Public - Angular)
+  - `blue-fox-blog-backend` / `blue-fox-blog-backend-local`: (Confidential - NestJS)
+  - `blue-fox-finance-web` / `blue-fox-finance-web-local`: (Public - Angular)
+  - `blue-fox-finance-backend` / `blue-fox-finance-backend-local`: (Confidential - NestJS)
 - **Roles:**
-  - `ROLE_ADMIN`: Acesso total ao blog e dashboards.
-  - `ROLE_USER`: Acesso a conteúdos exclusivos.
+  - `ROLE_ADMIN`: Administrador global do grupo Blue Fox.
+  - `ROLE_USER`: Usuário geral autenticado.
+  - `ROLE_AQUARIUM_ADMIN` / `ROLE_AQUARIUM_EDITOR` / `ROLE_AQUARIUM_USER`: Gestão de artigos e conteúdos do Aquarismo.
+  - `ROLE_FINANCE_ADMIN` / `ROLE_FINANCE_USER`: Gestão de transações e relatórios financeiros.
