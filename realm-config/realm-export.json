@@ -1,6 +1,6 @@
 {
   "id": "72be61a4-0233-4ce7-bff6-c3d5edc78ed2",
-  "realm": "Blue_Fox_Group",
+  "realm": "blue-fox-global-group",
   "displayName": "",
   "displayNameHtml": "",
   "notBefore": 0,
@@ -60,8 +60,8 @@
         "attributes": {}
       },
       {
-        "id": "9640eb36-5cf6-4737-b783-89a267295cfe",
-        "name": "ROLE_AQUARISM_EDITORS",
+        "id": "e41c22e3-17b5-43f4-a05e-caff3b262c8c",
+        "name": "ROLE_AQUARIUM_ADMIN",
         "description": "",
         "composite": false,
         "clientRole": false,
@@ -87,8 +87,35 @@
         "attributes": {}
       },
       {
+        "id": "1ef05a29-782a-40eb-8d5b-7849b24c75ed",
+        "name": "ROLE_AQUARIUM_USER",
+        "description": "",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "72be61a4-0233-4ce7-bff6-c3d5edc78ed2",
+        "attributes": {}
+      },
+      {
         "id": "071c9c63-ad96-4258-8769-fdc271b23f72",
         "name": "ROLE_ADMIN",
+        "description": "",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "72be61a4-0233-4ce7-bff6-c3d5edc78ed2",
+        "attributes": {}
+      },
+      {
+        "id": "e7b5badf-32f7-49d7-b070-2214138a9e39",
+        "name": "ROLE_FINANCE_ADMIN",
+        "description": "",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "72be61a4-0233-4ce7-bff6-c3d5edc78ed2",
+        "attributes": {}
+      },
+      {
+        "id": "d6b52064-3e42-41bb-bacd-8840885f7580",
+        "name": "ROLE_FINANCE_USER",
         "description": "",
         "composite": false,
         "clientRole": false,
@@ -112,6 +139,24 @@
             ]
           }
         },
+        "clientRole": false,
+        "containerId": "72be61a4-0233-4ce7-bff6-c3d5edc78ed2",
+        "attributes": {}
+      },
+      {
+        "id": "7c8dc6bc-b12e-4796-961b-f1b989a72e0e",
+        "name": "ROLE_AQUARIUM_EDITOR",
+        "description": "",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "72be61a4-0233-4ce7-bff6-c3d5edc78ed2",
+        "attributes": {}
+      },
+      {
+        "id": "9640eb36-5cf6-4737-b783-89a267295cfe",
+        "name": "ROLE_AQUARISM_EDITORS",
+        "description": "Compatibilidade com blue-fox-blog-backend",
+        "composite": false,
         "clientRole": false,
         "containerId": "72be61a4-0233-4ce7-bff6-c3d5edc78ed2",
         "attributes": {}
@@ -330,21 +375,11 @@
           "attributes": {}
         }
       ],
-      "aquarismo-api": [
-        {
-          "id": "c8a10464-e77c-495f-adeb-6f7257f081f6",
-          "name": "uma_protection",
-          "composite": false,
-          "clientRole": true,
-          "containerId": "7753953f-4b66-4ba7-88ef-f24ccf534f82",
-          "attributes": {}
-        }
-      ],
+      "blue-fox-finance-web-local": [],
       "security-admin-console": [],
-      "admin-cli": [],
-      "blue-fox-aquariums-local": [],
+      "blue-fox-blog-backend": [],
       "account-console": [],
-      "blue-fox-aquariums": [],
+      "blue-fox-aquariums-web-local": [],
       "broker": [
         {
           "id": "5c11b1f4-654d-48e7-ba29-3c09da52dac9",
@@ -356,6 +391,20 @@
           "attributes": {}
         }
       ],
+      "blue-fox-aquariums-web": [],
+      "blue-fox-finance-web": [],
+      "blue-fox-blog-backend-local": [
+        {
+          "id": "c8a10464-e77c-495f-adeb-6f7257f081f6",
+          "name": "uma_protection",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "7753953f-4b66-4ba7-88ef-f24ccf534f82",
+          "attributes": {}
+        }
+      ],
+      "blue-fox-finance-backend": [],
+      "admin-cli": [],
       "account": [
         {
           "id": "bf988cdd-81a7-43ad-972d-c00ea3bc4fba",
@@ -443,24 +492,11 @@
           "containerId": "c1bb8705-e3b6-4dc7-b26f-234c322e6cf2",
           "attributes": {}
         }
-      ]
+      ],
+      "blue-fox-finance-backend-local": []
     }
   },
-  "groups": [
-    {
-      "id": "e4637145-124f-4baa-92dc-c47214247576",
-      "name": "Aquarium Team",
-      "description": "",
-      "path": "/Aquarium Team",
-      "subGroups": [],
-      "attributes": {},
-      "realmRoles": [
-        "ROLE_USER",
-        "ROLE_AQUARISM_EDITORS"
-      ],
-      "clientRoles": {}
-    }
-  ],
+  "groups": [],
   "defaultRole": {
     "id": "ea54fbaa-ecac-4870-9236-e761c92dbbff",
     "name": "default-roles-bluefox",
@@ -515,23 +551,164 @@
   "webAuthnPolicyPasswordlessExtraOrigins": [],
   "users": [
     {
+      "id": "5cb1ddc5-2153-485d-90a5-590ab31b6efe",
+      "username": "service-account-blue-fox-blog-backend",
+      "emailVerified": false,
+      "enabled": true,
+      "createdTimestamp": 1791415147813,
+      "totp": false,
+      "serviceAccountClientId": "blue-fox-blog-backend",
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": [
+        "default-roles-bluefox"
+      ],
+      "notBefore": 0,
+      "groups": []
+    },
+    {
       "id": "17b3b545-6727-4c58-a732-111715967b8b",
-      "username": "service-account-aquarismo-api",
+      "username": "service-account-blue-fox-blog-backend-local",
       "emailVerified": false,
       "enabled": true,
       "createdTimestamp": 1775960465617,
       "totp": false,
-      "serviceAccountClientId": "aquarismo-api",
+      "serviceAccountClientId": "blue-fox-blog-backend-local",
       "disableableCredentialTypes": [],
       "requiredActions": [],
       "realmRoles": [
         "default-roles-bluefox"
       ],
       "clientRoles": {
-        "aquarismo-api": [
+        "blue-fox-blog-backend-local": [
           "uma_protection"
         ]
       },
+      "notBefore": 0,
+      "groups": []
+    },
+    {
+      "id": "37f26e6a-f241-4333-884f-f114035af5fc",
+      "username": "service-account-blue-fox-finance-backend",
+      "emailVerified": false,
+      "enabled": true,
+      "createdTimestamp": 1791415722908,
+      "totp": false,
+      "serviceAccountClientId": "blue-fox-finance-backend",
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": [
+        "default-roles-bluefox"
+      ],
+      "notBefore": 0,
+      "groups": []
+    },
+    {
+      "id": "0a2e22f9-2807-4a92-ac08-93ec0d60d34f",
+      "username": "service-account-blue-fox-finance-backend-local",
+      "emailVerified": false,
+      "enabled": true,
+      "createdTimestamp": 1791415866490,
+      "totp": false,
+      "serviceAccountClientId": "blue-fox-finance-backend-local",
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": [
+        "default-roles-bluefox"
+      ],
+      "notBefore": 0,
+      "groups": []
+    },
+    {
+      "id": "c76a911a-128a-45c1-8419-f01e69b59620",
+      "username": "aquarismo.editor",
+      "firstName": "Editor",
+      "lastName": "Aquarismo",
+      "email": "editor@bluefoxaquarismo.space",
+      "emailVerified": true,
+      "enabled": true,
+      "totp": false,
+      "createdTimestamp": 1791418262096,
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": [
+        "default-roles-bluefox",
+        "ROLE_USER",
+        "ROLE_AQUARIUM_EDITOR",
+        "ROLE_AQUARISM_EDITORS"
+      ],
+      "clientRoles": {},
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Aquarismo@2026",
+          "temporary": false
+        }
+      ],
+      "notBefore": 0,
+      "groups": []
+    },
+    {
+      "id": "e22a445b-9999-4c12-a111-d00e69b59731",
+      "username": "aquarismo.admin",
+      "firstName": "Admin",
+      "lastName": "Aquarismo",
+      "email": "admin@bluefoxaquarismo.space",
+      "emailVerified": true,
+      "enabled": true,
+      "totp": false,
+      "createdTimestamp": 1791418262096,
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": [
+        "default-roles-bluefox",
+        "ROLE_USER",
+        "ROLE_ADMIN",
+        "ROLE_AQUARIUM_ADMIN",
+        "ROLE_AQUARIUM_EDITOR",
+        "ROLE_AQUARISM_EDITORS"
+      ],
+      "clientRoles": {},
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Admin@Aquarismo2026",
+          "temporary": false
+        }
+      ],
+      "notBefore": 0,
+      "groups": []
+    },
+    {
+      "id": "f11b2233-4455-6677-8899-aabbccddeeff",
+      "username": "felipe.ferraz",
+      "firstName": "Felipe",
+      "lastName": "Ferraz",
+      "email": "felipeferraz2402@gmail.com",
+      "emailVerified": true,
+      "enabled": true,
+      "totp": false,
+      "createdTimestamp": 1791418262096,
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": [
+        "default-roles-bluefox",
+        "ROLE_USER",
+        "ROLE_ADMIN",
+        "ROLE_AQUARIUM_ADMIN",
+        "ROLE_AQUARIUM_EDITOR",
+        "ROLE_AQUARISM_EDITORS",
+        "ROLE_FINANCE_ADMIN",
+        "ROLE_FINANCE_USER"
+      ],
+      "clientRoles": {},
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Admin@BlueFox2026",
+          "temporary": false
+        }
+      ],
       "notBefore": 0,
       "groups": []
     }
@@ -561,13 +738,13 @@
       "clientId": "account",
       "name": "${client_account}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/Blue_Fox_Group/account/",
+      "baseUrl": "/realms/blue-fox-global-group/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/Blue_Fox_Group/account/*"
+        "/realms/blue-fox-global-group/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -608,13 +785,13 @@
       "clientId": "account-console",
       "name": "${client_account-console}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/Blue_Fox_Group/account/",
+      "baseUrl": "/realms/blue-fox-global-group/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/Blue_Fox_Group/account/*"
+        "/realms/blue-fox-global-group/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -706,83 +883,9 @@
       ]
     },
     {
-      "id": "7753953f-4b66-4ba7-88ef-f24ccf534f82",
-      "clientId": "aquarismo-api",
-      "name": "Aquarismo Api",
-      "description": "",
-      "rootUrl": "http://localhost:8080",
-      "adminUrl": "http://localhost:8080",
-      "baseUrl": "",
-      "surrogateAuthRequired": false,
-      "enabled": true,
-      "alwaysDisplayInConsole": false,
-      "clientAuthenticatorType": "client-secret",
-      "secret": "**********",
-      "redirectUris": [
-        "http://localhost:8080/*"
-      ],
-      "webOrigins": [
-        "http://localhost:4200"
-      ],
-      "notBefore": 0,
-      "bearerOnly": false,
-      "consentRequired": false,
-      "standardFlowEnabled": true,
-      "implicitFlowEnabled": false,
-      "directAccessGrantsEnabled": false,
-      "serviceAccountsEnabled": true,
-      "authorizationServicesEnabled": true,
-      "publicClient": false,
-      "frontchannelLogout": true,
-      "protocol": "openid-connect",
-      "attributes": {
-        "logout.confirmation.enabled": "false",
-        "client.secret.creation.time": "1775960465",
-        "oauth2.jwt.authorization.grant.enabled": "false",
-        "standard.token.exchange.enabled": "false",
-        "frontchannel.logout.session.required": "true",
-        "post.logout.redirect.uris": "http://localhost:8080/*",
-        "oauth2.device.authorization.grant.enabled": "false",
-        "backchannel.logout.revoke.offline.tokens": "false",
-        "realm_client": "false",
-        "oidc.ciba.grant.enabled": "false",
-        "backchannel.logout.session.required": "true",
-        "display.on.consent.screen": "false",
-        "pkce.code.challenge.method": "S256",
-        "dpop.bound.access.tokens": "false"
-      },
-      "authenticationFlowBindingOverrides": {},
-      "fullScopeAllowed": true,
-      "nodeReRegistrationTimeout": -1,
-      "defaultClientScopes": [
-        "service_account",
-        "web-origins",
-        "acr",
-        "roles",
-        "profile",
-        "basic",
-        "email"
-      ],
-      "optionalClientScopes": [
-        "address",
-        "phone",
-        "organization",
-        "offline_access",
-        "microprofile-jwt"
-      ],
-      "authorizationSettings": {
-        "allowRemoteResourceManagement": true,
-        "policyEnforcementMode": "ENFORCING",
-        "resources": [],
-        "policies": [],
-        "scopes": [],
-        "decisionStrategy": "UNANIMOUS"
-      }
-    },
-    {
       "id": "2a4568b7-c12b-4657-839a-e8712d6ca504",
-      "clientId": "blue-fox-aquariums",
-      "name": "Blue Fox Aquariums",
+      "clientId": "blue-fox-aquariums-web",
+      "name": "Blue Fox Aquariums Web",
       "description": "",
       "rootUrl": "https://bluefoxaquarismo.space",
       "adminUrl": "https://bluefoxaquarismo.space",
@@ -812,7 +915,7 @@
         "oauth2.jwt.authorization.grant.enabled": "false",
         "standard.token.exchange.enabled": "false",
         "frontchannel.logout.session.required": "true",
-        "post.logout.redirect.uris": "+",
+        "post.logout.redirect.uris": "https://bluefoxaquarismo.space/*",
         "oauth2.device.authorization.grant.enabled": "false",
         "backchannel.logout.revoke.offline.tokens": "false",
         "realm_client": "false",
@@ -827,6 +930,7 @@
       "nodeReRegistrationTimeout": -1,
       "defaultClientScopes": [
         "web-origins",
+        "bluefox-audiences",
         "acr",
         "roles",
         "profile",
@@ -843,21 +947,21 @@
     },
     {
       "id": "551e7544-c36c-46c2-baa7-8db08514f644",
-      "clientId": "blue-fox-aquariums-local",
-      "name": "Blue Fox Aqueriums",
+      "clientId": "blue-fox-aquariums-web-local",
+      "name": "Blue Fox Aqueriums Web Local",
       "description": "",
-      "rootUrl": "http://localhost:4200",
-      "adminUrl": "http://localhost:4200",
-      "baseUrl": "http://localhost:4200",
+      "rootUrl": "http://localhost:4000",
+      "adminUrl": "http://localhost:4000",
+      "baseUrl": "http://localhost:4000",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "http://localhost:4200/*"
+        "http://localhost:4000/*"
       ],
       "webOrigins": [
-        "http://localhost:4200"
+        "http://localhost:4000"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -873,7 +977,323 @@
         "logout.confirmation.enabled": "false",
         "standard.token.exchange.enabled": "false",
         "oauth2.jwt.authorization.grant.enabled": "false",
-        "post.logout.redirect.uris": "+",
+        "frontchannel.logout.session.required": "true",
+        "post.logout.redirect.uris": "http://localhost:4000/*",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "backchannel.logout.revoke.offline.tokens": "false",
+        "realm_client": "false",
+        "oidc.ciba.grant.enabled": "false",
+        "backchannel.logout.session.required": "true",
+        "display.on.consent.screen": "false",
+        "pkce.code.challenge.method": "S256",
+        "dpop.bound.access.tokens": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": true,
+      "nodeReRegistrationTimeout": -1,
+      "defaultClientScopes": [
+        "web-origins",
+        "bluefox-audiences",
+        "acr",
+        "roles",
+        "profile",
+        "basic",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "organization",
+        "offline_access",
+        "microprofile-jwt"
+      ]
+    },
+    {
+      "id": "01bc7ce3-b972-46cf-83d4-42e31ba3d30e",
+      "clientId": "blue-fox-blog-backend",
+      "name": "Blue Fox Blog Backend",
+      "description": "",
+      "rootUrl": "https://blog-api.bluefoxglobalgroup.com",
+      "adminUrl": "https://blog-api.bluefoxglobalgroup.com",
+      "baseUrl": "https://blog-api.bluefoxglobalgroup.com",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "**********",
+      "redirectUris": [
+        "https://blog-api.bluefoxglobalgroup.com/*"
+      ],
+      "webOrigins": [
+        "https://blog-api.bluefoxglobalgroup.com"
+      ],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": false,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": true,
+      "publicClient": false,
+      "frontchannelLogout": true,
+      "protocol": "openid-connect",
+      "attributes": {
+        "realm_client": "false",
+        "logout.confirmation.enabled": "false",
+        "oidc.ciba.grant.enabled": "false",
+        "client.secret.creation.time": "1791415147",
+        "backchannel.logout.session.required": "true",
+        "standard.token.exchange.enabled": "false",
+        "oauth2.jwt.authorization.grant.enabled": "false",
+        "frontchannel.logout.session.required": "true",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "display.on.consent.screen": "false",
+        "backchannel.logout.revoke.offline.tokens": "false",
+        "dpop.bound.access.tokens": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": true,
+      "nodeReRegistrationTimeout": -1,
+      "defaultClientScopes": [
+        "service_account",
+        "web-origins",
+        "acr",
+        "roles",
+        "profile",
+        "basic",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "organization",
+        "offline_access",
+        "microprofile-jwt"
+      ]
+    },
+    {
+      "id": "7753953f-4b66-4ba7-88ef-f24ccf534f82",
+      "clientId": "blue-fox-blog-backend-local",
+      "name": "Blue Fox Blog Backend Local",
+      "description": "",
+      "rootUrl": "http://localhost:8081",
+      "adminUrl": "http://localhost:8081",
+      "baseUrl": "http://localhost:8081",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "**********",
+      "redirectUris": [
+        "http://localhost:8081/*"
+      ],
+      "webOrigins": [
+        "http://localhost:8081"
+      ],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": false,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": true,
+      "publicClient": false,
+      "frontchannelLogout": true,
+      "protocol": "openid-connect",
+      "attributes": {
+        "logout.confirmation.enabled": "false",
+        "client.secret.creation.time": "1775960465",
+        "oauth2.jwt.authorization.grant.enabled": "false",
+        "standard.token.exchange.enabled": "false",
+        "frontchannel.logout.session.required": "true",
+        "post.logout.redirect.uris": "http://localhost:8081/*",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "backchannel.logout.revoke.offline.tokens": "false",
+        "realm_client": "false",
+        "oidc.ciba.grant.enabled": "false",
+        "backchannel.logout.session.required": "true",
+        "display.on.consent.screen": "false",
+        "dpop.bound.access.tokens": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": true,
+      "nodeReRegistrationTimeout": -1,
+      "defaultClientScopes": [
+        "service_account",
+        "web-origins",
+        "acr",
+        "roles",
+        "profile",
+        "basic",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "organization",
+        "offline_access",
+        "microprofile-jwt"
+      ]
+    },
+    {
+      "id": "7e77e93e-4946-45d6-a43c-2b32ab45eb42",
+      "clientId": "blue-fox-finance-backend",
+      "name": "Blue Fox Finance Backend",
+      "description": "",
+      "rootUrl": "https://finance-api.bluefoxglobalgroup.com",
+      "adminUrl": "https://finance-api.bluefoxglobalgroup.com",
+      "baseUrl": "https://finance-api.bluefoxglobalgroup.com",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "**********",
+      "redirectUris": [
+        "https://finance-api.bluefoxglobalgroup.com/*"
+      ],
+      "webOrigins": [
+        "https://finance-api.bluefoxglobalgroup.com"
+      ],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": false,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": true,
+      "publicClient": false,
+      "frontchannelLogout": true,
+      "protocol": "openid-connect",
+      "attributes": {
+        "realm_client": "false",
+        "logout.confirmation.enabled": "false",
+        "oidc.ciba.grant.enabled": "false",
+        "client.secret.creation.time": "1791415722",
+        "backchannel.logout.session.required": "true",
+        "standard.token.exchange.enabled": "false",
+        "oauth2.jwt.authorization.grant.enabled": "false",
+        "frontchannel.logout.session.required": "true",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "display.on.consent.screen": "false",
+        "backchannel.logout.revoke.offline.tokens": "false",
+        "dpop.bound.access.tokens": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": true,
+      "nodeReRegistrationTimeout": -1,
+      "defaultClientScopes": [
+        "service_account",
+        "web-origins",
+        "acr",
+        "roles",
+        "profile",
+        "basic",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "organization",
+        "offline_access",
+        "microprofile-jwt"
+      ]
+    },
+    {
+      "id": "5058eb88-b188-41a8-a27e-6a3b08b5e91d",
+      "clientId": "blue-fox-finance-backend-local",
+      "name": "Blue Fox Finance Backend Local",
+      "description": "",
+      "rootUrl": "http://localhost:3000",
+      "adminUrl": "http://localhost:3000",
+      "baseUrl": "http://localhost:3000",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "**********",
+      "redirectUris": [
+        "http://localhost:3000/*"
+      ],
+      "webOrigins": [
+        "http://localhost:3000"
+      ],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": false,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": true,
+      "publicClient": false,
+      "frontchannelLogout": true,
+      "protocol": "openid-connect",
+      "attributes": {
+        "realm_client": "false",
+        "logout.confirmation.enabled": "false",
+        "oidc.ciba.grant.enabled": "false",
+        "client.secret.creation.time": "1791415866",
+        "backchannel.logout.session.required": "true",
+        "standard.token.exchange.enabled": "false",
+        "oauth2.jwt.authorization.grant.enabled": "false",
+        "frontchannel.logout.session.required": "true",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "display.on.consent.screen": "false",
+        "backchannel.logout.revoke.offline.tokens": "false",
+        "dpop.bound.access.tokens": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": true,
+      "nodeReRegistrationTimeout": -1,
+      "defaultClientScopes": [
+        "service_account",
+        "web-origins",
+        "acr",
+        "roles",
+        "profile",
+        "basic",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "organization",
+        "offline_access",
+        "microprofile-jwt"
+      ]
+    },
+    {
+      "id": "51ee77ca-7a44-4350-a277-d78d64d8be8e",
+      "clientId": "blue-fox-finance-web",
+      "name": "Blue Fox Finance Web",
+      "description": "",
+      "rootUrl": "https://finance.bluefoxglobalgroup.com",
+      "adminUrl": "https://finance.bluefoxglobalgroup.com",
+      "baseUrl": "https://finance.bluefoxglobalgroup.com",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "redirectUris": [
+        "https://finance.bluefoxglobalgroup.com/*"
+      ],
+      "webOrigins": [
+        "https://finance.bluefoxglobalgroup.com"
+      ],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "publicClient": true,
+      "frontchannelLogout": true,
+      "protocol": "openid-connect",
+      "attributes": {
+        "logout.confirmation.enabled": "false",
+        "standard.token.exchange.enabled": "false",
+        "oauth2.jwt.authorization.grant.enabled": "false",
+        "post.logout.redirect.uris": "https://finance.bluefoxglobalgroup.com/*",
         "frontchannel.logout.session.required": "true",
         "oauth2.device.authorization.grant.enabled": "false",
         "backchannel.logout.revoke.offline.tokens": "false",
@@ -889,6 +1309,69 @@
       "nodeReRegistrationTimeout": -1,
       "defaultClientScopes": [
         "web-origins",
+        "bluefox-audiences",
+        "acr",
+        "roles",
+        "profile",
+        "basic",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "organization",
+        "offline_access",
+        "microprofile-jwt"
+      ]
+    },
+    {
+      "id": "189baac7-e9b2-4571-b1f0-47db779350d8",
+      "clientId": "blue-fox-finance-web-local",
+      "name": "Blue Fox Finance Web Local",
+      "description": "",
+      "rootUrl": "http://localhost:4201",
+      "adminUrl": "http://localhost:4201",
+      "baseUrl": "http://localhost:4201/*",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "redirectUris": [
+        "http://localhost:4201/*",
+        "http://localhost:4200/*"
+      ],
+      "webOrigins": [
+        "http://localhost:4201",
+        "http://localhost:4200"
+      ],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "publicClient": true,
+      "frontchannelLogout": true,
+      "protocol": "openid-connect",
+      "attributes": {
+        "realm_client": "false",
+        "oidc.ciba.grant.enabled": "false",
+        "backchannel.logout.session.required": "true",
+        "standard.token.exchange.enabled": "false",
+        "oauth2.jwt.authorization.grant.enabled": "false",
+        "post.logout.redirect.uris": "http://localhost:4201/*",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "pkce.code.challenge.method": "S256",
+        "backchannel.logout.revoke.offline.tokens": "false",
+        "dpop.bound.access.tokens": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": true,
+      "nodeReRegistrationTimeout": -1,
+      "defaultClientScopes": [
+        "web-origins",
+        "bluefox-audiences",
         "acr",
         "roles",
         "profile",
@@ -994,13 +1477,13 @@
       "clientId": "security-admin-console",
       "name": "${client_security-admin-console}",
       "rootUrl": "${authAdminUrl}",
-      "baseUrl": "/admin/Blue_Fox_Group/console/",
+      "baseUrl": "/admin/blue-fox-global-group/console/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/admin/Blue_Fox_Group/console/*"
+        "/admin/blue-fox-global-group/console/*"
       ],
       "webOrigins": [
         "+"
@@ -1691,6 +2174,77 @@
       ]
     },
     {
+      "id": "4a2de76d-cb55-49ce-989b-8a1e5a98b609",
+      "name": "bluefox-audiences",
+      "description": "Mapeia a audiência (aud claim) das APIs do backend nos tokens de acesso",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "false",
+        "gui.order": "",
+        "consent.screen.text": "",
+        "include.in.openid.provider.metadata": "true"
+      },
+      "protocolMappers": [
+        {
+          "id": "faabc8cb-fc98-44e9-8bc3-75666c498f2f",
+          "name": "blog-audience",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "consentRequired": false,
+          "config": {
+            "included.client.audience": "blue-fox-blog-backend",
+            "id.token.claim": "false",
+            "lightweight.claim": "false",
+            "access.token.claim": "true",
+            "introspection.token.claim": "true"
+          }
+        },
+        {
+          "id": "3f8ce659-784e-4726-a408-058252731850",
+          "name": "finance-audience-local",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "consentRequired": false,
+          "config": {
+            "included.client.audience": "blue-fox-finance-backend-local",
+            "id.token.claim": "false",
+            "lightweight.claim": "false",
+            "access.token.claim": "true",
+            "introspection.token.claim": "true"
+          }
+        },
+        {
+          "id": "e8843638-7109-44cd-b149-0bdc85ec74bc",
+          "name": "blog-audience-local",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "consentRequired": false,
+          "config": {
+            "included.client.audience": "blue-fox-blog-backend-local",
+            "id.token.claim": "false",
+            "lightweight.claim": "false",
+            "access.token.claim": "true",
+            "introspection.token.claim": "true"
+          }
+        },
+        {
+          "id": "986704c0-f8f3-40cc-8605-cd7f2743f4c1",
+          "name": "finance-audience",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "consentRequired": false,
+          "config": {
+            "included.client.audience": "blue-fox-finance-backend",
+            "id.token.claim": "false",
+            "lightweight.claim": "false",
+            "access.token.claim": "true",
+            "introspection.token.claim": "true"
+          }
+        }
+      ]
+    },
+    {
       "id": "3845b793-cdf8-456c-bd84-cee668bd8f05",
       "name": "offline_access",
       "description": "OpenID Connect built-in scope: offline_access",
@@ -1754,7 +2308,8 @@
     "roles",
     "web-origins",
     "acr",
-    "basic"
+    "basic",
+    "bluefox-audiences"
   ],
   "defaultOptionalClientScopes": [
     "offline_access",
@@ -1805,13 +2360,13 @@
         "config": {
           "allowed-protocol-mapper-types": [
             "oidc-usermodel-property-mapper",
-            "saml-user-attribute-mapper",
-            "oidc-usermodel-attribute-mapper",
-            "saml-user-property-mapper",
-            "oidc-sha256-pairwise-sub-mapper",
             "oidc-address-mapper",
+            "saml-user-attribute-mapper",
+            "oidc-sha256-pairwise-sub-mapper",
             "saml-role-list-mapper",
-            "oidc-full-name-mapper"
+            "oidc-usermodel-attribute-mapper",
+            "oidc-full-name-mapper",
+            "saml-user-property-mapper"
           ]
         }
       },
@@ -1823,13 +2378,13 @@
         "subComponents": {},
         "config": {
           "allowed-protocol-mapper-types": [
-            "saml-role-list-mapper",
-            "oidc-sha256-pairwise-sub-mapper",
-            "oidc-usermodel-attribute-mapper",
             "saml-user-property-mapper",
             "oidc-usermodel-property-mapper",
+            "oidc-usermodel-attribute-mapper",
             "oidc-address-mapper",
+            "saml-role-list-mapper",
             "saml-user-attribute-mapper",
+            "oidc-sha256-pairwise-sub-mapper",
             "oidc-full-name-mapper"
           ]
         }
