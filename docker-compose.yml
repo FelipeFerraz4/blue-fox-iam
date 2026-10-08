@@ -1,7 +1,7 @@
 services:
   keycloak-db:
     image: postgres:16-alpine
-    container_name: bluefox-iam-db
+    container_name: blue-fox-iam-db
     restart: unless-stopped
     environment:
       POSTGRES_DB: ${DB_NAME:-keycloak_db}
@@ -20,7 +20,7 @@ services:
 
   keycloak:
     image: quay.io/keycloak/keycloak:26.6.1
-    container_name: bluefox-iam-server
+    container_name: blue-fox-iam-server
     restart: unless-stopped
     environment:
       KC_DB: postgres
