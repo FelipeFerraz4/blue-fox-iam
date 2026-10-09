@@ -183,20 +183,20 @@ body.bf-login-body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .bf-logo {
-  height: 72px;
+  height: 100px;
   max-width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 6px 20px rgba(56, 182, 255, 0.42));
+  filter: drop-shadow(0 8px 24px rgba(56, 182, 255, 0.45));
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
 }
 
 .bf-logo:hover {
-  transform: scale(1.06);
-  filter: drop-shadow(0 0 26px rgba(56, 182, 255, 0.75));
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 32px rgba(56, 182, 255, 0.8));
 }
 
 .bf-title {
@@ -874,7 +874,7 @@ body.bf-login-body {
   }
 
   .bf-logo {
-    height: 60px;
+    height: 76px;
   }
 
   .bf-title {

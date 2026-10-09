@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex, nofollow" />
 
     <title><#nested "header"> | Blue Fox</title>
-    <link rel="icon" href="${url.resourcesPath}/img/logo.png" type="image/png" />
+    <link rel="icon" href="${url.resourcesPath}/img/logo.png?v=2.2" type="image/png" />
 
     <#-- Google Fonts: Outfit (Display & Títulos) + Inter (Corpo & Inputs) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
     </#if>
     <#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
-            <link href="${url.resourcesPath}/${style}?v=2.0" rel="stylesheet" />
+            <link href="${url.resourcesPath}/${style}?v=2.2" rel="stylesheet" />
         </#list>
     </#if>
 
@@ -331,7 +331,6 @@
 
     <div class="bf-page-container">
         <#-- Barra superior com Botão Voltar e Seletor de Idioma -->
-        <#assign clientTargetName = (client.name)!(client.clientId)!msg("bfDefaultApp")>
         <#assign clientTargetUrl = (client.rootUrl)!(client.baseUrl)!''>
         <#if clientTargetUrl?ends_with("/*")>
             <#assign clientTargetUrl = clientTargetUrl?keep_before_last("/*")>
@@ -341,8 +340,8 @@
 
         <#-- Definição dos 9 idiomas suportados com metadados -->
         <#assign bfSupportedLanguages = [
-            { "tag": "pt-BR", "altTag": "pt", "name": "Português (Brasil)", "sub": "Portuguese", "flag": "🇧🇷", "search": "portugues brasil portuguese brazil pt pt-br" },
-            { "tag": "en", "altTag": "en", "name": "English (US)", "sub": "Inglês", "flag": "🇺🇸", "search": "english ingles american united states en us" },
+            { "tag": "pt-BR", "altTag": "pt", "name": "Português (Brasil)", "sub": "Portuguese / Português", "flag": "🇧🇷", "search": "portugues brasil portuguese brazil pt pt-br" },
+            { "tag": "en", "altTag": "en", "name": "English (US)", "sub": "English / Inglês", "flag": "🇺🇸", "search": "english ingles american united states en us" },
             { "tag": "es", "altTag": "es", "name": "Español", "sub": "Spanish / Espanhol", "flag": "🇪🇸", "search": "espanol spanish castellano spain es" },
             { "tag": "de", "altTag": "de", "name": "Deutsch", "sub": "German / Alemão", "flag": "🇩🇪", "search": "deutsch german alemao germany de" },
             { "tag": "fr", "altTag": "fr", "name": "Français", "sub": "French / Francês", "flag": "🇫🇷", "search": "francais french frances france fr" },
@@ -367,13 +366,13 @@
             <a href="<#if clientTargetUrl?has_content>${clientTargetUrl}<#else>javascript:history.back()</#if>" 
                class="bf-back-btn" 
                id="bf-back-to-app-btn"
-               title="${msg('bfBackToAppTitle', clientTargetName)}"
+               title="${msg('bfBackToAppTitle')}"
                onclick="if (window.history.length > 1) { window.history.back(); return false; }">
                 <svg class="bf-back-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="19" y1="12" x2="5" y2="12"></line>
                     <polyline points="12 19 5 12 12 5"></polyline>
                 </svg>
-                <span>${msg('bfBackToApp', clientTargetName)?no_esc}</span>
+                <span>${msg('bfBackToApp')}</span>
             </a>
 
             <#-- Dropdown de Idiomas com Busca -->
@@ -426,7 +425,7 @@
                                     </#list>
                                 </#if>
                                 <#assign isCurrent = (curLocaleTag?lower_case == langItem.tag?lower_case || curLocaleTag?lower_case == langItem.altTag?lower_case)>
-                                <li class="bf-lang-item<#if isCurrent> is-active</#if>" data-search="${langItem.search} ${langItem.name?lower_case}" role="option" aria-selected="${isCurrent?then('true','false')}">
+                                <li class="bf-lang-item<#if isCurrent> is-active</#if>" data-search="${langItem.search} ${langItem.name?lower_case} ${langItem.sub?lower_case}" role="option" aria-selected="${isCurrent?then('true','false')}">
                                     <a class="bf-lang-link" href="${langUrl}">
                                         <span class="bf-lang-item-flag">${langItem.flag}</span>
                                         <div class="bf-lang-item-text">
@@ -456,7 +455,7 @@
         <main class="bf-card">
             <header class="bf-card-header">
                 <div class="bf-logo-wrapper">
-                    <img src="${url.resourcesPath}/img/logo.png" alt="Blue Fox Logo" class="bf-logo" />
+                    <img src="${url.resourcesPath}/img/logo.png?v=2.2" alt="Blue Fox Logo" class="bf-logo" />
                 </div>
                 <h1 class="bf-title"><#nested "header"></h1>
                 <p class="bf-subtitle">${msg("bfSubtitle")}</p>
