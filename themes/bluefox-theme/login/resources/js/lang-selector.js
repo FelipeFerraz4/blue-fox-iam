@@ -7,8 +7,8 @@
     'use strict';
 
     const languages = [
-        { tag: 'pt-BR', altTags: ['pt', 'pt_BR'], name: 'Português (Brasil)', secondary: 'Portuguese', flag: '🇧🇷', search: 'portugues brasil portuguese brazil pt pt-br' },
-        { tag: 'en', altTags: ['en-US', 'en_US'], name: 'English (US)', secondary: 'Inglês', flag: '🇺🇸', search: 'english ingles american united states en us' },
+        { tag: 'pt-BR', altTags: ['pt', 'pt_BR'], name: 'Português (Brasil)', secondary: 'Portuguese / Português', flag: '🇧🇷', search: 'portugues brasil portuguese brazil pt pt-br' },
+        { tag: 'en', altTags: ['en-US', 'en_US'], name: 'English (US)', secondary: 'English / Inglês', flag: '🇺🇸', search: 'english ingles american united states en us' },
         { tag: 'es', altTags: ['es-ES', 'es_ES'], name: 'Español', secondary: 'Spanish / Espanhol', flag: '🇪🇸', search: 'espanol spanish castellano spain es' },
         { tag: 'de', altTags: ['de-DE', 'de_DE'], name: 'Deutsch', secondary: 'German / Alemão', flag: '🇩🇪', search: 'deutsch german alemao germany de' },
         { tag: 'fr', altTags: ['fr-FR', 'fr_FR'], name: 'Français', secondary: 'French / Francês', flag: '🇫🇷', search: 'francais french frances france fr' },
