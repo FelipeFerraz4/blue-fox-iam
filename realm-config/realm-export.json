@@ -2518,7 +2518,9 @@
     "it",
     "ja",
     "zh-CN",
-    "ko"
+    "ko",
+    "ar",
+    "he"
   ],
   "defaultLocale": "pt-BR",
   "authenticationFlows": [
