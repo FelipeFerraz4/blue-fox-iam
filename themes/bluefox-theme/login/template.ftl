@@ -10,10 +10,10 @@
     <title><#nested "header"> | Blue Fox</title>
     <link rel="icon" href="${url.resourcesPath}/img/logo.png?v=2.2" type="image/png" />
 
-    <#-- Google Fonts: Outfit (Display & Títulos) + Inter (Corpo & Inputs) -->
+    <#-- Google Fonts: Outfit (Display & Títulos), Inter (Corpo & Inputs), Cairo (Árabe), Rubik (Hebraico) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <#-- Folhas de estilo do tema com cache buster -->
     <#if properties.stylesCommon?has_content>
@@ -321,6 +321,45 @@
             font-size: 0.8rem !important;
             color: #94a3b8 !important;
         }
+
+        /* Suporte RTL (Right-to-Left) Crítico para Árabe e Hebraico */
+        html[dir="rtl"] {
+            --font-headers: 'Cairo', 'Rubik', 'Outfit', sans-serif;
+            --font-body: 'Rubik', 'Cairo', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        html[dir="rtl"] .bf-lang-menu {
+            right: auto !important;
+            left: 0 !important;
+        }
+
+        html[dir="rtl"] .bf-back-icon {
+            transform: scaleX(-1) !important;
+        }
+
+        html[dir="rtl"] .bf-lang-chevron {
+            margin-left: 0 !important;
+            margin-right: 2px !important;
+        }
+
+        html[dir="rtl"] .bf-lang-search-icon {
+            margin-right: 0 !important;
+            margin-left: 6px !important;
+        }
+
+        html[dir="rtl"] .bf-lang-item-flag {
+            margin-right: 0 !important;
+            margin-left: 8px !important;
+        }
+
+        html[dir="rtl"] .bf-lang-item-badge {
+            margin-left: 0 !important;
+            margin-right: auto !important;
+        }
+
+        html[dir="rtl"] .bf-lang-item-text {
+            text-align: right !important;
+        }
     </style>
 </head>
 
@@ -338,7 +377,7 @@
             <#assign clientTargetUrl = clientTargetUrl?keep_before_last("*")>
         </#if>
 
-        <#-- Definição dos 9 idiomas suportados com metadados -->
+        <#-- Definição dos 11 idiomas suportados com metadados -->
         <#assign bfSupportedLanguages = [
             { "tag": "pt-BR", "altTag": "pt", "name": "Português (Brasil)", "sub": "Portuguese / Português", "flag": "🇧🇷", "search": "portugues brasil portuguese brazil pt pt-br" },
             { "tag": "en", "altTag": "en", "name": "English (US)", "sub": "English / Inglês", "flag": "🇺🇸", "search": "english ingles american united states en us" },
@@ -348,7 +387,9 @@
             { "tag": "it", "altTag": "it", "name": "Italiano", "sub": "Italian / Italiano", "flag": "🇮🇹", "search": "italiano italian italia it" },
             { "tag": "ja", "altTag": "ja", "name": "日本語", "sub": "Japanese / Japonês", "flag": "🇯🇵", "search": "日本語 nihongo japanese japones japan ja jp" },
             { "tag": "zh-CN", "altTag": "zh", "name": "简体中文", "sub": "Chinese / Chinês", "flag": "🇨🇳", "search": "简体中文 chinese chines zhongwen china zh zh-cn" },
-            { "tag": "ko", "altTag": "ko", "name": "한국어", "sub": "Korean / Coreano", "flag": "🇰🇷", "search": "한국어 hangugeo korean coreano korea ko kr" }
+            { "tag": "ko", "altTag": "ko", "name": "한국어", "sub": "Korean / Coreano", "flag": "🇰🇷", "search": "한국어 hangugeo korean coreano korea ko kr" },
+            { "tag": "ar", "altTag": "ar-SA", "name": "العربية", "sub": "Arabic / Árabe", "flag": "🇸🇦", "search": "العربية arabic arabe arabi saudi sa ar oriente medio" },
+            { "tag": "he", "altTag": "iw", "name": "עברית", "sub": "Hebrew / Hebraico", "flag": "🇮🇱", "search": "עברית hebrew hebraico ivrit israel il he iw" }
         ]>
 
         <#-- Identifica bandeira e rótulo do idioma corrente -->

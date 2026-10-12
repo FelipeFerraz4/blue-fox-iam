@@ -15,7 +15,9 @@
         { tag: 'it', altTags: ['it-IT', 'it_IT'], name: 'Italiano', secondary: 'Italian / Italiano', flag: '🇮🇹', search: 'italiano italian italia it' },
         { tag: 'ja', altTags: ['ja-JP', 'ja_JP'], name: '日本語', secondary: 'Japanese / Japonês', flag: '🇯🇵', search: '日本語 nihongo japanese japones japan ja jp' },
         { tag: 'zh-CN', altTags: ['zh', 'zh_Hans', 'zh-Hans', 'zh_CN'], name: '简体中文', secondary: 'Chinese / Chinês', flag: '🇨🇳', search: '简体中文 chinese chines zhongwen china zh zh-cn' },
-        { tag: 'ko', altTags: ['ko-KR', 'ko_KR'], name: '한국어', secondary: 'Korean / Coreano', flag: '🇰🇷', search: '한국어 hangugeo korean coreano korea ko kr' }
+        { tag: 'ko', altTags: ['ko-KR', 'ko_KR'], name: '한국어', secondary: 'Korean / Coreano', flag: '🇰🇷', search: '한국어 hangugeo korean coreano korea ko kr' },
+        { tag: 'ar', altTags: ['ar-SA', 'ar_SA'], name: 'العربية', secondary: 'Arabic / Árabe', flag: '🇸🇦', search: 'العربية arabic arabe arabi saudi sa ar oriente medio' },
+        { tag: 'he', altTags: ['he-IL', 'he_IL', 'iw', 'iw-IL', 'iw_IL'], name: 'עברית', secondary: 'Hebrew / Hebraico', flag: '🇮🇱', search: 'עברית hebrew hebraico ivrit israel il he iw' }
     ];
 
     function initLanguageSelector() {

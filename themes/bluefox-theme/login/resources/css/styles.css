@@ -888,3 +888,67 @@ body.bf-login-body {
   }
 }
 
+/* --------------------------------------------------------------------------
+   RTL (Right-to-Left) Styles - Arabic & Hebrew Support
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] {
+  --font-headers: 'Cairo', 'Rubik', 'Outfit', sans-serif;
+  --font-body: 'Rubik', 'Cairo', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html[dir="rtl"] .bf-label,
+html[dir="rtl"] .bf-input,
+html[dir="rtl"] .bf-field-error {
+  text-align: right;
+}
+
+html[dir="rtl"] .bf-input-password {
+  padding-right: 14px;
+  padding-left: 44px;
+}
+
+html[dir="rtl"] .bf-password-toggle {
+  right: auto;
+  left: 12px;
+}
+
+html[dir="rtl"] .bf-back-icon {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .bf-lang-menu {
+  right: auto;
+  left: 0;
+}
+
+html[dir="rtl"] .bf-lang-chevron {
+  margin-left: 0;
+  margin-right: 2px;
+}
+
+html[dir="rtl"] .bf-lang-search-icon {
+  margin-right: 0;
+  margin-left: 6px;
+}
+
+html[dir="rtl"] .bf-lang-item-flag {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+html[dir="rtl"] .bf-lang-item-badge {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+html[dir="rtl"] .bf-lang-item-text {
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  html[dir="rtl"] .bf-lang-menu {
+    right: auto;
+    left: 0;
+  }
+}
+
