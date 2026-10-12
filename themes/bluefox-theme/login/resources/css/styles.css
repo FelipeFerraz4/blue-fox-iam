@@ -897,13 +897,22 @@ html[dir="rtl"] {
 }
 
 html[dir="rtl"] .bf-label,
-html[dir="rtl"] .bf-input,
 html[dir="rtl"] .bf-field-error {
   text-align: right;
 }
 
+html[dir="rtl"] .bf-input {
+  text-align: right;
+  padding: 12px 42px 12px 14px;
+}
+
+html[dir="rtl"] .bf-input-icon {
+  left: auto;
+  right: 14px;
+}
+
 html[dir="rtl"] .bf-input-password {
-  padding-right: 14px;
+  padding-right: 42px;
   padding-left: 44px;
 }
 

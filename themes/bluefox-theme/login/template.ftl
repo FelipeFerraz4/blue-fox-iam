@@ -360,6 +360,31 @@
         html[dir="rtl"] .bf-lang-item-text {
             text-align: right !important;
         }
+
+        html[dir="rtl"] .bf-label,
+        html[dir="rtl"] .bf-field-error {
+            text-align: right !important;
+        }
+
+        html[dir="rtl"] .bf-input {
+            text-align: right !important;
+            padding: 12px 42px 12px 14px !important;
+        }
+
+        html[dir="rtl"] .bf-input-icon {
+            left: auto !important;
+            right: 14px !important;
+        }
+
+        html[dir="rtl"] .bf-input-password {
+            padding-right: 42px !important;
+            padding-left: 44px !important;
+        }
+
+        html[dir="rtl"] .bf-password-toggle {
+            right: auto !important;
+            left: 12px !important;
+        }
     </style>
 </head>
 
