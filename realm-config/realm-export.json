@@ -591,6 +591,12 @@
       "realmRoles": [
         "default-roles-bluefox"
       ],
+      "clientRoles": {
+        "realm-management": [
+          "manage-users",
+          "view-users"
+        ]
+      },
       "notBefore": 0,
       "groups": []
     },
@@ -607,6 +613,12 @@
       "realmRoles": [
         "default-roles-bluefox"
       ],
+      "clientRoles": {
+        "realm-management": [
+          "manage-users",
+          "view-users"
+        ]
+      },
       "notBefore": 0,
       "groups": []
     },
